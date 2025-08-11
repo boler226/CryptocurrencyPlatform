@@ -5,6 +5,12 @@ VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptocurrencyPlatform.API", "CryptocurrencyPlatform.API\CryptocurrencyPlatform.API.csproj", "{6C341375-72FA-4BC6-90F2-BDD71ACC3578}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptocurrencyPlatform.Domain", "CryptocurrencyPlatform.Domain\CryptocurrencyPlatform.Domain.csproj", "{BE265E29-3D2A-4514-9154-750A7FCE340E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptocurrencyPlatform.Application", "CryptocurrencyPlatform.Application\CryptocurrencyPlatform.Application.csproj", "{575E178F-2410-487B-A45F-746D0190471E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptocurrencyPlatform.Infrastructure", "CryptocurrencyPlatform.Infrastructure\CryptocurrencyPlatform.Infrastructure.csproj", "{1368D8C2-31A3-4688-97B1-27DF21F42D65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{6C341375-72FA-4BC6-90F2-BDD71ACC3578}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C341375-72FA-4BC6-90F2-BDD71ACC3578}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C341375-72FA-4BC6-90F2-BDD71ACC3578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE265E29-3D2A-4514-9154-750A7FCE340E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE265E29-3D2A-4514-9154-750A7FCE340E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE265E29-3D2A-4514-9154-750A7FCE340E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE265E29-3D2A-4514-9154-750A7FCE340E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{575E178F-2410-487B-A45F-746D0190471E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{575E178F-2410-487B-A45F-746D0190471E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{575E178F-2410-487B-A45F-746D0190471E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{575E178F-2410-487B-A45F-746D0190471E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1368D8C2-31A3-4688-97B1-27DF21F42D65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1368D8C2-31A3-4688-97B1-27DF21F42D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1368D8C2-31A3-4688-97B1-27DF21F42D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1368D8C2-31A3-4688-97B1-27DF21F42D65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
