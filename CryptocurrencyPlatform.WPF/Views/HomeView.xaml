@@ -1,0 +1,8 @@
+﻿<UserControl  x:Class="CryptocurrencyPlatform.WPF.Views.HomeView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid>
+        <Label Content="Home page!" Background="Beige" Width="100" Height="100"/>
+    </Grid>
+</UserControl>

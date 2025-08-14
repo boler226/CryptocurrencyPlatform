@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptocurrencyPlatform.API", "CryptocurrencyPlatform.API\CryptocurrencyPlatform.API.csproj", "{6C341375-72FA-4BC6-90F2-BDD71ACC3578}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptocurrencyPlatform.API", "CryptocurrencyPlatform.API\CryptocurrencyPlatform.API.csproj", "{6C341375-72FA-4BC6-90F2-BDD71ACC3578}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptocurrencyPlatform.Domain", "CryptocurrencyPlatform.Domain\CryptocurrencyPlatform.Domain.csproj", "{BE265E29-3D2A-4514-9154-750A7FCE340E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptocurrencyPlatform.Domain", "CryptocurrencyPlatform.Domain\CryptocurrencyPlatform.Domain.csproj", "{BE265E29-3D2A-4514-9154-750A7FCE340E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptocurrencyPlatform.Application", "CryptocurrencyPlatform.Application\CryptocurrencyPlatform.Application.csproj", "{575E178F-2410-487B-A45F-746D0190471E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptocurrencyPlatform.Application", "CryptocurrencyPlatform.Application\CryptocurrencyPlatform.Application.csproj", "{575E178F-2410-487B-A45F-746D0190471E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptocurrencyPlatform.Infrastructure", "CryptocurrencyPlatform.Infrastructure\CryptocurrencyPlatform.Infrastructure.csproj", "{1368D8C2-31A3-4688-97B1-27DF21F42D65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptocurrencyPlatform.Infrastructure", "CryptocurrencyPlatform.Infrastructure\CryptocurrencyPlatform.Infrastructure.csproj", "{1368D8C2-31A3-4688-97B1-27DF21F42D65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptocurrencyPlatform.WPF", "CryptocurrencyPlatform.WPF\CryptocurrencyPlatform.WPF.csproj", "{81EC83D9-B832-4E00-9C4E-FE5868C6683B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1368D8C2-31A3-4688-97B1-27DF21F42D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1368D8C2-31A3-4688-97B1-27DF21F42D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1368D8C2-31A3-4688-97B1-27DF21F42D65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81EC83D9-B832-4E00-9C4E-FE5868C6683B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81EC83D9-B832-4E00-9C4E-FE5868C6683B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81EC83D9-B832-4E00-9C4E-FE5868C6683B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81EC83D9-B832-4E00-9C4E-FE5868C6683B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
