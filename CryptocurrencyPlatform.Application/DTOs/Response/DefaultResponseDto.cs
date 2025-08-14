@@ -5,6 +5,6 @@ namespace CryptocurrencyPlatform.Application.DTOs.Response {
         [JsonPropertyName("timestamp")]
         public long TimeStamp { get; set; }
         [JsonPropertyName("data")]
-        public List<T> Data { get; set; } = new();
+        public T Data { get; set; }
     }
 }
