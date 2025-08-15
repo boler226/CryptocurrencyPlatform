@@ -2,7 +2,6 @@
 using CryptocurrencyPlatform.Infrastructure.Exceptions.Delegation.Unauthorized;
 using CryptocurrencyPlatform.Infrastructure.Services;
 using CryptocurrencyPlatform.WPF.ViewModels;
-using CryptocurrencyPlatform.WPF.Views;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -21,7 +20,7 @@ namespace CryptocurrencyPlatform.WPF {
                 .ConfigureServices((context, services) => {
                     services.AddTransient<MainWindow>();
                     services.AddTransient<MainWindowViewModel>();
-                    services.AddTransient<HomeViewModel>();
+                    services.AddTransient<AssetViewModel>();
 
                     services.AddTransient<UnauthorizedDelegatingHandler>();
 

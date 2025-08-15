@@ -8,12 +8,12 @@ using System.Windows;
 using System.Windows.Input;
 
 namespace CryptocurrencyPlatform.WPF.ViewModels {
-    public class HomeViewModel : ViewModelBase {
+    public class AssetViewModel : ViewModelBase {
         private readonly IAssetService _assetService;
         public ObservableCollection<AssetCardDto> AssetCards { get; set; } = new();
         public ICommand LoadAssetsCommand { get; }
 
-        public HomeViewModel(IAssetService assetService) {
+        public AssetViewModel(IAssetService assetService) {
             _assetService = assetService;
             LoadAssetsCommand = new RelayCommand(async _ => await LoadAssets(), _ => true);
             _ = LoadAssets();

@@ -9,7 +9,7 @@
         WindowState="Maximized">
     
     <Window.Resources>
-        <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+        <DataTemplate DataType="{x:Type vm:AssetViewModel}">
             <views:HomeView/>
         </DataTemplate>
     </Window.Resources>
