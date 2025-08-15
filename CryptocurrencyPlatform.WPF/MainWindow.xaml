@@ -6,19 +6,24 @@
         xmlns:vm="clr-namespace:CryptocurrencyPlatform.WPF.ViewModels"
         xmlns:views="clr-namespace:CryptocurrencyPlatform.WPF.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        WindowState="Maximized">
     
     <Window.Resources>
         <DataTemplate DataType="{x:Type vm:HomeViewModel}">
-            <views:HomeView />
+            <views:HomeView/>
         </DataTemplate>
     </Window.Resources>
 
     <Grid>
-        <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Background="LightGray" Height="40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" VerticalAlignment="Top" Orientation="Horizontal" Background="LightGray" Height="40">
             <Button Content="Home" Command="{Binding ShowHomeCommand}" Margin="5"/>
         </StackPanel>
-        
-        <ContentControl Content="{Binding CurrentViewModel}"/>
+
+        <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"/>
     </Grid>
 </Window>
