@@ -17,8 +17,8 @@ namespace CryptocurrencyPlatform.Infrastructure.Services {
             return entity.Data;
         }
 
-        public async Task<List<AssetEntity>> GetList(string? ids, CancellationToken cancellationToken, int limit = 100, int offset = 0) {
-            var assets = await httpClient.GetAsync($"{httpClient.BaseAddress}/assets?{ids}&{limit}&{offset}", cancellationToken)
+        public async Task<List<AssetEntity>> GetList(string? ids, CancellationToken cancellationToken, int limit = 100, int offset = 0) {            
+            var assets = await httpClient.GetAsync($"{httpClient.BaseAddress}/assets?ids={ids}&limit={limit}&offset={offset}", cancellationToken)
                        ?? throw new Exception("Failed to fetch asset");
 
             var content = await assets.Content.ReadAsStringAsync(cancellationToken);
