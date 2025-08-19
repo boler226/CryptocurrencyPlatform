@@ -1,9 +1,7 @@
-﻿using CryptocurrencyPlatform.Domain.Entities;
-using CryptocurrencyPlatform.Domain.Interfaces.Services;
+﻿using CryptocurrencyPlatform.Domain.Interfaces.Services;
 using CryptocurrencyPlatform.WPF.Commands;
 using CryptocurrencyPlatform.WPF.DTOs.Asset;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 
@@ -21,7 +19,7 @@ namespace CryptocurrencyPlatform.WPF.ViewModels {
 
         public async Task LoadAssets() {
             try {
-                var assets = await _assetService.GetList(null, CancellationToken.None, 20, 0);
+                var assets = await _assetService.GetList(null, CancellationToken.None, 10, 0);
                 AssetCards.Clear();
                 foreach (var asset in assets)
                     AssetCards.Add(new AssetCardDto {

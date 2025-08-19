@@ -2,23 +2,60 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <StackPanel>
-            <ItemsControl ItemsSource="{Binding AssetCards}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Border Margin="5" BorderBrush="Gray" BorderThickness="1" CornerRadius="8">
-                            <StackPanel>
-                                <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16"/>
-                                <TextBlock Text="{Binding Symbol}" FontStyle="Italic"/>
-                                <TextBlock Text="{Binding PriceUsd, StringFormat='Price: {0:C}'}"/>
-                                <TextBlock Text="{Binding ChangePercent24Hr, StringFormat='Change: {0}'}"/>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-        </StackPanel>
-    </ScrollViewer>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/ButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Height="150" Width="1200">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0" Style="{StaticResource TransparentButtonStyle}" Content="◀" Click="ScrollLeft_Click"/>
+
+        <ScrollViewer x:Name="CardsScrollViewer" Grid.Column="1"
+                      VerticalScrollBarVisibility="Disabled" 
+                      HorizontalScrollBarVisibility="Hidden">
+
+            <Grid>
+                <Grid.RenderTransform>
+                    <TranslateTransform x:Name="CardsTransform"/>
+                </Grid.RenderTransform>
+
+                <ItemsControl ItemsSource="{Binding AssetCards}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Width="257.5" Height="110" Margin="10" 
+                                    Background="#F0F0F0" 
+                                    BorderBrush="#CCCCCC" BorderThickness="1" 
+                                    CornerRadius="10" Padding="10">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="14" Foreground="#333333"/>
+                                    <TextBlock Text="{Binding Symbol}" FontStyle="Italic" FontSize="12" Foreground="#666666"/>
+                                    <TextBlock Text="{Binding PriceUsd, StringFormat='Price: {0:C}'}" FontSize="12" Foreground="#444444"/>
+                                    <TextBlock Text="{Binding ChangePercent24Hr, StringFormat='Change: {0}'}" FontSize="12" Foreground="#444444"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </ScrollViewer>
+
+        <Button Grid.Column="2" Style="{StaticResource TransparentButtonStyle}" Content="▶" Click="ScrollRight_Click"/>
+    </Grid>
 
 </UserControl>
