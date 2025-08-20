@@ -13,7 +13,8 @@ namespace CryptocurrencyPlatform.WPF.Views {
         }
 
         private void AnimateScroll(double toValue) {
-            if (isAnimating || Math.Abs(_currentOffset - toValue) < 0.1 || toValue > 0) return;
+            if (isAnimating || Math.Abs(_currentOffset - toValue) < 0.1) return;
+                
 
             double contentWidth = CardsScrollViewer.ExtentWidth;
             double viewportWidth = CardsScrollViewer.ViewportWidth;
@@ -30,10 +31,12 @@ namespace CryptocurrencyPlatform.WPF.Views {
                 EasingFunction = new CubicEase { EasingMode = EasingMode.EaseInOut }
             };
 
-            animation.Completed += (s, e) => isAnimating = false;
+            animation.Completed += (s, e) => {
+                _currentOffset = toValue;
+                isAnimating = false;
+            };
 
             CardsTransform.BeginAnimation(System.Windows.Media.TranslateTransform.XProperty, animation);
-            _currentOffset = toValue;
         }
 
         private void ScrollLeft_Click(object sender, RoutedEventArgs e) =>
