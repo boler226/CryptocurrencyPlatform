@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="CryptocurrencyPlatform.WPF.Views.RateView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls">
+
+    
+    <Grid Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+        <ComboBox Grid.Row="0" Grid.Column="0"
+                  ItemsSource="{Binding Rates}"
+                  SelectedItem="{Binding FromCurrency}"
+                  DisplayMemberPath="Symbol"
+                  Margin="5"/>
+
+        <ComboBox Grid.Row="0" Grid.Column="1"
+                  ItemsSource="{Binding Rates}"
+                  SelectedItem="{Binding ToCurrency}"
+                  DisplayMemberPath="Symbol"
+                  Margin="5"/>
+
+        <TextBox Grid.Row="1" Grid.Column="0"
+                 Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}"
+                 Margin="5"
+                 Style="{StaticResource CommonSearchBoxStyle}"
+                 controls:TextBoxHelper.Watermark="Amount"/>
+
+        <TextBox Grid.Row="1" Grid.Column="1"
+                 Text="{Binding Result, StringFormat={}{0:F4}}"
+                 FontWeight="Bold"
+                 VerticalAlignment="Center"
+                 Margin="5"
+                 Style="{StaticResource CommonSearchBoxStyle}"/>
+    </Grid>
+</UserControl>
