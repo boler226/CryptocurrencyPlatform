@@ -2,10 +2,10 @@
 using CryptocurrencyPlatform.Infrastructure.Exceptions.Delegation.Unauthorized;
 using CryptocurrencyPlatform.Infrastructure.Services;
 using CryptocurrencyPlatform.WPF.ViewModels;
+using CryptocurrencyPlatform.Infrastructure.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Net.Http.Headers;
 using System.Windows;
 
 namespace CryptocurrencyPlatform.WPF {
@@ -24,12 +24,8 @@ namespace CryptocurrencyPlatform.WPF {
 
                     services.AddTransient<UnauthorizedDelegatingHandler>();
 
-                    services.AddHttpClient<IAssetService, AssetService>(client => {
-                        client.BaseAddress = new Uri("https://rest.coincap.io/v3/");
-
-                        client.DefaultRequestHeaders.Authorization =
-                            new AuthenticationHeaderValue("Bearer", context.Configuration["BearerAuth:Value"]);
-                    }).AddHttpMessageHandler<UnauthorizedDelegatingHandler>();
+                    services.AddCoincapClient<IAssetService, AssetService>(context.Configuration);
+                    services.AddCoincapClient<IRateService, RateService>(context.Configuration);
                 }).Build();
         }
 

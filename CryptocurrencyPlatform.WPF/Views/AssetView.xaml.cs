@@ -1,16 +1,14 @@
-﻿using CryptocurrencyPlatform.WPF.ViewModels;
-using Microsoft.Extensions.DependencyInjection;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
 namespace CryptocurrencyPlatform.WPF.Views {
-    public partial class HomeView : UserControl {
+    public partial class AssetView : UserControl {
         private double _currentOffset = 0;
         private const double Step = 350;
         private bool isAnimating = false;
 
-        public HomeView() {
+        public AssetView() {
             InitializeComponent();
         }
 

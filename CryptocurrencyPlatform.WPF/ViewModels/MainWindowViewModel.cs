@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace CryptocurrencyPlatform.WPF.ViewModels {
     public class MainWindowViewModel : ViewModelBase {
-        public ICommand ShowHomeCommand { get; }
+        public ICommand ShowAssetCommand { get; }
         private readonly AssetViewModel _assetViewModel;
 
         private object? _currentViewModel;
@@ -15,7 +15,7 @@ namespace CryptocurrencyPlatform.WPF.ViewModels {
 
         public MainWindowViewModel() {
             _assetViewModel = App.AppHost.Services.GetRequiredService<AssetViewModel>();
-            ShowHomeCommand = new RelayCommand(_ => CurrentViewModel = _assetViewModel, _ => true);
+            ShowAssetCommand = new RelayCommand(_ => CurrentViewModel = _assetViewModel, _ => true);
             CurrentViewModel = _assetViewModel;
         }
     }
