@@ -7,10 +7,10 @@ namespace CryptocurrencyPlatform.API.Controllers {
     public class AssetsController(IAssetService service) : ControllerBase {
         [HttpGet("{slug}")]
         public async Task<IActionResult> GetById(string slug, CancellationToken cancellationToken) =>
-            Ok(await service.GetById(slug, cancellationToken));
+            Ok(await service.GetByIdAsync(slug, cancellationToken));
 
         [HttpGet]
         public async Task<IActionResult> GetList(string? ids, CancellationToken cancellationToken, int limit = 100, int offset = 0) =>
-            Ok(await service.GetList(ids, cancellationToken, limit, offset));
+            Ok(await service.GetListAsync(ids, cancellationToken, limit, offset));
     }
 }

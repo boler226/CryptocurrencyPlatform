@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace CryptocurrencyPlatform.Infrastructure.Services {
     public class RateService(HttpClient httpClient) : IRateService {
-        public async Task<RateEntity> GetById(string slug, CancellationToken cancellationToken) {
+        public async Task<RateEntity> GetByIdAsync(string slug, CancellationToken cancellationToken) {
             var rate = await httpClient.GetAsync($"{httpClient.BaseAddress}/rates/{slug}", cancellationToken)
                        ?? throw new Exception("");
 
@@ -17,7 +17,7 @@ namespace CryptocurrencyPlatform.Infrastructure.Services {
             return entity.Data;
         }
 
-        public async Task<List<RateEntity>> GetList(string? ids, CancellationToken cancellationToken) {
+        public async Task<List<RateEntity>> GetListAsync(string? ids, CancellationToken cancellationToken) {
             var rates = await httpClient.GetAsync($"{httpClient.BaseAddress}/rates?ids={ids}", cancellationToken)
                                        ?? throw new Exception("");
 

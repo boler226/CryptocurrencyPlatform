@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace CryptocurrencyPlatform.Infrastructure.Services {
     public class AssetService(HttpClient httpClient) : IAssetService {
-        public async Task<AssetEntity> GetById(string slug, CancellationToken cancellationToken) {
+        public async Task<AssetEntity> GetByIdAsync(string slug, CancellationToken cancellationToken) {
             var asset = await httpClient.GetAsync($"{httpClient.BaseAddress}/assets/{slug}", cancellationToken)
                         ?? throw new Exception("Failed to fetch asset");
 
@@ -17,7 +17,7 @@ namespace CryptocurrencyPlatform.Infrastructure.Services {
             return entity.Data;
         }
 
-        public async Task<List<AssetEntity>> GetList(string? ids, CancellationToken cancellationToken, int limit = 100, int offset = 0) {            
+        public async Task<List<AssetEntity>> GetListAsync(string? ids, CancellationToken cancellationToken, int limit = 100, int offset = 0) {            
             var assets = await httpClient.GetAsync($"{httpClient.BaseAddress}/assets?ids={ids}&limit={limit}&offset={offset}", cancellationToken)
                        ?? throw new Exception("Failed to fetch asset");
 
