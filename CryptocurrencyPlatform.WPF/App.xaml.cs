@@ -19,8 +19,10 @@ namespace CryptocurrencyPlatform.WPF {
                })
                 .ConfigureServices((context, services) => {
                     services.AddTransient<MainWindow>();
+
                     services.AddTransient<MainWindowViewModel>();
                     services.AddTransient<AssetViewModel>();
+                    services.AddTransient<RateViewModel>();
 
                     services.AddTransient<UnauthorizedDelegatingHandler>();
 

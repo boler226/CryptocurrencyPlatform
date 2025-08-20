@@ -12,6 +12,10 @@
         <DataTemplate DataType="{x:Type vm:AssetViewModel}">
             <views:AssetView/>
         </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:RateViewModel}">
+            <views:RateView/>
+        </DataTemplate>
     </Window.Resources>
 
     <Grid>
