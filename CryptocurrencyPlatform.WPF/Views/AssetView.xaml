@@ -80,9 +80,7 @@
                          Margin="0 0 15 0"
                          Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}"
                          Style="{StaticResource CommonSearchBoxStyle}"
-                         controls:TextBoxHelper.Watermark="🔍 Search..." />
-
-
+                         controls:TextBoxHelper.Watermark="Search..." />
 
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
                     <Button Content="▲ Price"
