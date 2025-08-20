@@ -32,7 +32,7 @@
                         <TranslateTransform x:Name="CardsTransform"/>
                     </Grid.RenderTransform>
 
-                    <ItemsControl ItemsSource="{Binding AssetCards}">
+                    <ItemsControl ItemsSource="{Binding PopularAssetCards}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel Orientation="Horizontal" VerticalAlignment="Center"/>

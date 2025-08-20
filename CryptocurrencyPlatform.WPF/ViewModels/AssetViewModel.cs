@@ -12,6 +12,7 @@ namespace CryptocurrencyPlatform.WPF.ViewModels {
     public class AssetViewModel : ViewModelBase {
         private readonly IAssetService _assetService;
         public ObservableCollection<AssetCardDto> AssetCards { get; set; } = new();
+        public ObservableCollection<AssetCardDto> PopularAssetCards { get; set; } = new();
         public ObservableCollection<AssetCardDto> FilteredAssetCards { get; set; } = new();
 
         private string searchQuery;
@@ -42,7 +43,7 @@ namespace CryptocurrencyPlatform.WPF.ViewModels {
 
         public async Task LoadAssets() {
             try {
-                var assets = await _assetService.GetList(null, CancellationToken.None);
+                var assets = await _assetService.GetListAsync(null, CancellationToken.None);
                 AssetCards.Clear();
                 foreach (var asset in assets)
                     AssetCards.Add(new AssetCardDto {
@@ -56,6 +57,10 @@ namespace CryptocurrencyPlatform.WPF.ViewModels {
                 FilteredAssetCards.Clear();
                 foreach (var item in AssetCards)
                     FilteredAssetCards.Add(item);
+
+                PopularAssetCards.Clear();
+                foreach (var item in AssetCards.Take(10))
+                    PopularAssetCards.Add(item);
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message, "LoadAssets Error", MessageBoxButton.OK, MessageBoxImage.Error);
