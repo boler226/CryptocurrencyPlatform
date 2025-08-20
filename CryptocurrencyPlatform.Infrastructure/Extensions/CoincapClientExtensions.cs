@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace CryptocurrencyPlatform.Infrastructure.Extensions {
     public static class CoincapClientExtensions {
         public static void ConfigureCoincapClient(this HttpClient httpClient, IConfiguration configuration) {
-            httpClient.BaseAddress = new Uri("https://rest.coincap.io/v3/");
+            httpClient.BaseAddress = new Uri("https://rest.coincap.io/v3");
             httpClient.DefaultRequestHeaders.Authorization =
                 new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", configuration["BearerAuth:Value"]);
         }
