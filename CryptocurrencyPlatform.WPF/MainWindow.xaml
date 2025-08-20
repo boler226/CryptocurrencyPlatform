@@ -7,7 +7,7 @@
         xmlns:views="clr-namespace:CryptocurrencyPlatform.WPF.Views"
         mc:Ignorable="d"
         WindowState="Maximized">
-    
+
     <Window.Resources>
         <DataTemplate DataType="{x:Type vm:AssetViewModel}">
             <views:AssetView/>
@@ -23,10 +23,18 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <StackPanel Grid.Row="0" VerticalAlignment="Top" Orientation="Horizontal" Background="LightGray" Height="40">
-            <Button Content="Home" Command="{Binding ShowAssetCommand}" Margin="5"/>
-        </StackPanel>
+
+        <Border Grid.Row="0" Background="#f4fcf5" Padding="10,5">
+            <StackPanel Grid.Row="0" VerticalAlignment="Top" Orientation="Horizontal" Height="40">
+                <Button Content="Home"
+                    Command="{Binding ShowAssetCommand}"
+                    Style="{StaticResource NavButtonStyle}"/>
+
+                <Button Content="Rates"
+                    Command="{Binding ShowRateCommand}"
+                    Style="{StaticResource NavButtonStyle}"/>
+            </StackPanel>
+        </Border>
 
         <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"/>
     </Grid>
